@@ -4,7 +4,6 @@ import "fmt"
 
 // TODO: try to collect all pairs that satisfy the condition
 func TwoSum(nums []int, target int) []int {
-	// Simple unoptimized version
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i]+nums[j] == target {
