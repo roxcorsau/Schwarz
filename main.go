@@ -2,21 +2,24 @@ package main
 
 import "fmt"
 
-// TODO: try to collect all pairs that satisfy the condition
-func TwoSum(nums []int, target int) []int {
+func TwoSumAllPairs(nums []int, target int) map[int]int {
+	pairs := make(map[int]int)
+
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i]+nums[j] == target {
-				return []int{i, j}
+
+				pairs[i] = j
 			}
 		}
 	}
-	return nil
+
+	return pairs
 }
 
 func main() {
 	numbers := []int{2, 7, 11, 15}
 	target := 9
-	result := TwoSum(numbers, target)
+	result := TwoSumAllPairs(numbers, target)
 	fmt.Printf("Result: %v\n", result)
 }
