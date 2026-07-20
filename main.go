@@ -18,20 +18,19 @@ func TwoSumFast(nums []int, target int) map[int]int {
 	pairs := make(map[int]int)
 	seen := make(map[int]int)
 
-	for i, val := range nums {
-		diff := target - val
-		if idx, ok := seen[diff]; ok {
-			pairs[idx] = i
-		} else {
-			seen[val] = i
+	for i, num := range nums {
+		complement := target - num
+		if prevIdx, found := seen[complement]; found {
+			pairs[prevIdx] = i
 		}
+		seen[num] = i
 	}
 
 	return pairs
 }
 
 func main() {
-	numbers := []int{2, 7, 11, 15}
+	numbers := []int{2, 7, 11, 15, 3, 6}
 	target := 9
 	fmt.Println("TwoSum (O(n^2)):", TwoSum(numbers, target))
 	fmt.Println("TwoSumFast (O(n)):", TwoSumFast(numbers, target))
