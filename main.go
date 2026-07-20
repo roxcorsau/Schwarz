@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// TODO: Optimize TwoSum to O(n) using a map!
+// TODO: try to collect all pairs that satisfy the condition
 func TwoSum(nums []int, target int) []int {
 	// Simple unoptimized version
 	for i := 0; i < len(nums); i++ {
