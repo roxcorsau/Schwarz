@@ -2,13 +2,11 @@ package main
 
 import "fmt"
 
-func TwoSumAllPairs(nums []int, target int) map[int]int {
+func TwoSum(nums []int, target int) map[int]int {
 	pairs := make(map[int]int)
-
 	for i := 0; i < len(nums); i++ {
 		for j := i + 1; j < len(nums); j++ {
 			if nums[i]+nums[j] == target {
-
 				pairs[i] = j
 			}
 		}
@@ -20,6 +18,6 @@ func TwoSumAllPairs(nums []int, target int) map[int]int {
 func main() {
 	numbers := []int{2, 7, 11, 15}
 	target := 9
-	result := TwoSumAllPairs(numbers, target)
+	result := TwoSum(numbers, target)
 	fmt.Printf("Result: %v\n", result)
 }
